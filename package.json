@@ -6,12 +6,20 @@
         "ios": "expo start --ios --config client-configs/stefanos/app.json",
         "web": "expo start --web --config client-configs/stefanos/app.json",
         "lint": "eslint ./",
-        "lint:fix": "eslint --fix . && prettier ./**/*.js --write"
+        "lint:fix": "eslint --fix . && prettier ./**/*.js --write",
+        "test": "jest",
+        "test:watch": "jest --watch"
     },
     "husky": {
         "hooks": {
             "pre-commit": "pretty-quick --staged"
         }
+    },
+    "jest": {
+        "preset": "jest-expo",
+        "testMatch": [
+            "**/*.test.js"
+        ]
     },
     "dependencies": {
         "expo": "^34.0.1",
