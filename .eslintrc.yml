@@ -1,0 +1,64 @@
+env:
+    browser: true
+    es6: true
+    react-native/react-native: true
+    jest: true
+extends:
+    - "eslint:recommended"
+    - "plugin:prettier/recommended"
+    - "plugin:react-native/all"
+    - "plugin:import/errors"
+    - "plugin:import/warnings"
+    - "plugin:relay/recommended"
+    - "plugin:jest/recommended"
+    - "plugin:security/recommended"
+    - "plugin:promise/recommended"
+parser: babel-eslint
+parserOptions:
+    ecmaFeatures:
+        jsx: true
+    ecmaVersion: 2018
+    sourceType: module
+plugins:
+    - babel
+    - react
+    - react-native
+    - import
+    - jest
+    - promise
+    - relay
+    - security
+settings:
+    import/core-modules:
+        - expo
+rules:
+    linebreak-style:
+        - error
+        - unix
+    quotes:
+        - error
+        - double
+    semi:
+        - error
+        - always
+    react/jsx-uses-vars:
+        - error
+    react/jsx-uses-react:
+        - error
+    react-native/no-raw-text:
+        - warn
+    react-native/sort-styles:
+        - off
+    import/order:
+        - error
+        - newlines-between: always
+          groups:
+              - builtin
+              - external
+              - internal
+              - parent
+              - sibling
+    relay/generated-flow-types:
+        - off
+    relay/graphql-syntax:
+        - warn
