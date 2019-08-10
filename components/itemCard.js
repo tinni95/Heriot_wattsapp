@@ -10,10 +10,11 @@ export default class ItemCard extends React.Component {
             >
                 <View style={styles.ItemCard}>
                     <View style={styles.textContainer}>
-                        <Text>{this.props.name}</Text>
-                        <Text>For Only £{this.props.price}</Text>
+                        <Text style={styles.itemName}>{this.props.name}</Text>
+                        <Text style={styles.itemPrice}>
+                            £{this.props.price}
+                        </Text>
                     </View>
-
                     <View style={styles.plusButton}>
                         <Text style={styles.plus}>+</Text>
                     </View>
@@ -27,11 +28,11 @@ const styles = StyleSheet.create({
     ItemCard: {
         flex: 1,
         flexDirection: "row",
-        height: 150,
+        height: 100,
         margin: 10,
         width: 320,
         backgroundColor: itemCard.background,
-        borderRadius: 50,
+        borderRadius: 10,
     },
     imageContainer: {
         flex: 2,
@@ -41,9 +42,16 @@ const styles = StyleSheet.create({
     },
     textContainer: {
         flexDirection: "column",
-        justifyContent: "center",
-        alignContent: "center",
+        margin: 10,
         flex: 6,
+    },
+    itemName: {
+        fontWeight: "bold",
+        fontSize: 24,
+    },
+    itemPrice: {
+        marginTop: 15,
+        fontSize: 16,
     },
     plusButton: {
         flex: 1,

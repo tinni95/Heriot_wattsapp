@@ -9,26 +9,31 @@ export const categories = {
                             {
                                 node: {
                                     name: "mangia",
+                                    price: 20,
                                 },
                             },
                             {
                                 node: {
                                     name: "mangiaa",
+                                    price: 10,
                                 },
                             },
                             {
                                 node: {
                                     name: "mangiia",
+                                    price: 10,
                                 },
                             },
                             {
                                 node: {
                                     name: "mangi2a",
+                                    price: 10,
                                 },
                             },
                             {
                                 node: {
                                     name: "mangi23a",
+                                    price: 10,
                                 },
                             },
                         ],
@@ -43,6 +48,7 @@ export const categories = {
                                             {
                                                 node: {
                                                     name: "Panini With Ham",
+                                                    price: 10,
                                                 },
                                             },
                                         ],
@@ -61,6 +67,7 @@ export const categories = {
                             {
                                 node: {
                                     name: "mangia",
+                                    price: 10,
                                 },
                             },
                         ],
@@ -75,6 +82,7 @@ export const categories = {
                             {
                                 node: {
                                     name: "mangia",
+                                    price: 10,
                                 },
                             },
                         ],
@@ -89,6 +97,7 @@ export const categories = {
                             {
                                 node: {
                                     name: "mangia",
+                                    price: 10,
                                 },
                             },
                         ],

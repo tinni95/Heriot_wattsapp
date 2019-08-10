@@ -8,7 +8,13 @@ export default class CategoryPage extends React.Component {
         return menuItems.edges
             .map(edge => edge.node)
             .map(menuItem => {
-                return <ItemCard key={menuItem.name} name={menuItem.name} />;
+                return (
+                    <ItemCard
+                        key={menuItem.name}
+                        name={menuItem.name}
+                        price={menuItem.price}
+                    />
+                );
             });
     };
 
@@ -21,7 +27,13 @@ export default class CategoryPage extends React.Component {
             .map(subCategory => {
                 return (
                     <View key={subCategory.name}>
-                        <Text style={{ fontSize: 22, fontWeight: "bold" }}>
+                        <Text
+                            style={{
+                                margin: 25,
+                                fontSize: 25,
+                                fontWeight: "bold",
+                            }}
+                        >
                             {subCategory.name}
                         </Text>
                         {this.renderMenuItems(subCategory.menuItems)}
