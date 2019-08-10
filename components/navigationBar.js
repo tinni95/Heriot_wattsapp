@@ -33,7 +33,10 @@ export default class NavigationBar extends React.Component {
                         key={category.name}
                         path={"/" + category.name}
                         render={() => (
-                            <CategoryPage menuItems={category.menuItems} />
+                            <CategoryPage
+                                menuItems={category.menuItems}
+                                subCategories={category.subCategories}
+                            />
                         )}
                     />
                 );

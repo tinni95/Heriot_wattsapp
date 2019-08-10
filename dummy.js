@@ -33,6 +33,24 @@ export const categories = {
                             },
                         ],
                     },
+                    subCategories: {
+                        edges: [
+                            {
+                                node: {
+                                    name: "Panini",
+                                    menuItems: {
+                                        edges: [
+                                            {
+                                                node: {
+                                                    name: "Panini With Ham",
+                                                },
+                                            },
+                                        ],
+                                    },
+                                },
+                            },
+                        ],
+                    },
                 },
             },
             {
