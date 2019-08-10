@@ -9,7 +9,7 @@ export default class NavigationBar extends React.Component {
     renderNavBar = () => {
         return this.props.categories.edges
             .map(edge => edge.node)
-            .map(category => {
+            .map((category, index) => {
                 return (
                     <View key={category.name}>
                         <Link
@@ -17,52 +17,55 @@ export default class NavigationBar extends React.Component {
                             underlayColor="#f0f4f7"
                             style={styles.navItem}
                         >
-                            <Text>{category.name}</Text>
+                            {index == 0 ? (
+                                <View style={styles.selectedNav}>
+                                    <Text style={styles.navBarTextFirstItem}>
+                                        {category.name}
+                                    </Text>
+                                </View>
+                            ) : (
+                                <Text style={styles.navBarTextItem}>
+                                    {category.name}
+                                </Text>
+                            )}
                         </Link>
                     </View>
                 );
             });
     };
 
-    renderRoutes = () => {
-        return this.props.categories.edges
-            .map(edge => edge.node)
-            .map(category => {
-                return (
-                    <Route
-                        key={category.name}
-                        path={"/" + category.name}
-                        render={() => (
-                            <CategoryPage
-                                menuItems={category.menuItems}
-                                subCategories={category.subCategories}
-                            />
-                        )}
-                    />
-                );
-            });
-    };
-
     render() {
         return (
-            <NativeRouter>
-                <ScrollView horizontal={true} style={styles.container}>
-                    {this.renderNavBar()}
-                </ScrollView>
-                {this.renderRoutes()}
-            </NativeRouter>
+            <ScrollView horizontal={true} style={styles.container}>
+                {this.renderNavBar()}
+            </ScrollView>
         );
     }
 }
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 25,
-        padding: 10,
+        marginTop: 20,
+        height: 100,
     },
     navItem: {
         flex: 1,
         alignItems: "center",
         padding: 10,
+    },
+    navBarTextItem: {
+        color: "white",
+        fontSize: 22,
+        paddingLeft: 20,
+    },
+    navBarTextFirstItem: {
+        color: "white",
+        fontSize: 22,
+    },
+    selectedNav: {
+        borderBottomColor: "#E0A749",
+        borderBottomWidth: 2,
+        marginLeft: 120,
+        height: 40,
     },
 });

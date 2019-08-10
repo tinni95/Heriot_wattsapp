@@ -1,15 +1,14 @@
 import React from "react";
 import { Text, View } from "react-native";
+
+import ItemCard from "./itemCard";
+
 export default class CategoryPage extends React.Component {
     renderMenuItems = menuItems => {
         return menuItems.edges
             .map(edge => edge.node)
             .map(menuItem => {
-                return (
-                    <View key={menuItem.name}>
-                        <Text>{menuItem.name}</Text>
-                    </View>
-                );
+                return <ItemCard key={menuItem.name} name={menuItem.name} />;
             });
     };
 
