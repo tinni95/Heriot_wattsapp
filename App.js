@@ -7,7 +7,7 @@ import {
     main,
     secondary,
     searchBar,
-} from "../client-configs/stefanos/constants/colors";
+} from "./client-configs/stefanos/constants/colors";
 
 import { categories } from "./dummy";
 import NavigationBar from "./components/navigationBar";
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
         borderTopColor: "transparent",
     },
     searchBar: {
-        backgroundColor: searchBar.secondary,
+        backgroundColor: secondary,
         borderRadius: 10,
     },
     logoContainer: {

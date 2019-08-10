@@ -9,15 +9,9 @@ export default class ItemCard extends React.Component {
                 style={{ flex: 1, alignItems: "center", marginTop: 20 }}
             >
                 <View style={styles.ItemCard}>
-                    <View style={styles.imageContainer}>
-                        <Image
-                            style={styles.image}
-                            source={require("./image_placeholder.png")}
-                        />
-                    </View>
                     <View style={styles.textContainer}>
                         <Text>{this.props.name}</Text>
-                        <Text>{this.props.name}</Text>
+                        <Text>For Only £{this.props.price}</Text>
                     </View>
 
                     <View style={styles.plusButton}>
