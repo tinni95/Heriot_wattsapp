@@ -1,6 +1,6 @@
 import React from "react";
 import { NativeRouter } from "react-router-native";
-import { ScrollView, View, StyleSheet, Text } from "react-native";
+import { SafeAreaView, ScrollView, View, StyleSheet, Text } from "react-native";
 import { SearchBar } from "react-native-elements";
 
 import {
@@ -14,31 +14,59 @@ import NavigationBar from "./components/navigationBar";
 import InfoBar from "./components/infoBar";
 import Menu from "./components/menu";
 
-export default function App() {
-    return (
-        <NativeRouter>
-            <ScrollView>
-                <InfoBar />
-                <View style={styles.mainHeader}>
-                    <View style={styles.logoContainer}>
-                        <Text style={styles.logo}>Logo</Text>
+export default class Appe extends React.Component {
+    state = {
+        search: "",
+    };
+
+    updateSearch = search => {
+        this.setState({ search });
+    };
+
+    render() {
+        const { search } = this.state;
+        return (
+            <NativeRouter>
+                <ScrollView>
+                    <InfoBar style={styles.infoBar} />
+                    <View style={styles.mainHeaders}>
+                        <View style={styles.logoContainer}>
+                            <Text style={styles.logo}>Logo</Text>
+                        </View>
+                        <NavigationBar {...categories} />
                     </View>
-                    <NavigationBar {...categories} />
-                </View>
-                <SearchBar
-                    containerStyle={styles.searchBarContainer}
-                    inputContainerStyle={styles.searchBar}
-                    placeholder={"Type something..."}
-                    placeholderTextColor={"white"}
-                    color={"white"}
-                />
-                <Menu {...categories} />
-            </ScrollView>
-        </NativeRouter>
-    );
+                    <View style={styles.mainConent}>
+                        <SearchBar
+                            containerStyle={styles.searchBarContainer}
+                            inputContainerStyle={styles.searchBar}
+                            placeholder={"Type something..."}
+                            onChangeText={this.updateSearch}
+                            value={search}
+                            placeholderTextColor={"white"}
+                            color={"white"}
+                        />
+                        <Menu {...categories} />
+                    </View>
+                </ScrollView>
+            </NativeRouter>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
+    appContainer: {
+        flex: 1,
+        flexDirection: "column",
+        alignItems: "stretch",
+    },
+    infoBar: {
+        backgroundColor: secondary,
+        paddingBottom: 15,
+    },
+    mainHeaders: {
+        backgroundColor: main,
+    },
+    mainConent: {},
     searchBarContainer: {
         backgroundColor: "white",
         borderBottomColor: "transparent",
@@ -55,8 +83,5 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 50,
         textAlign: "center",
-    },
-    mainHeader: {
-        backgroundColor: main,
     },
 });

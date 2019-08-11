@@ -1,9 +1,12 @@
 import React from "react";
 import { NativeRouter, Link } from "react-router-native";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
-import { Route } from "react-router";
-
-import CategoryPage from "./categoryPage";
+import {
+    TouchableHighlight,
+    StyleSheet,
+    Text,
+    View,
+    ScrollView,
+} from "react-native";
 
 export default class NavigationBar extends React.Component {
     renderNavBar = () => {
@@ -16,6 +19,7 @@ export default class NavigationBar extends React.Component {
                             to={"/" + category.name}
                             underlayColor="#f0f4f7"
                             style={styles.navItem}
+                            component={TouchableHighlight}
                         >
                             {index == 0 ? (
                                 <View style={styles.selectedNav}>
