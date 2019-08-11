@@ -29,16 +29,10 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "row",
         height: 100,
-        margin: 10,
+        margin: 8,
         width: 320,
         backgroundColor: itemCard.background,
         borderRadius: 10,
-    },
-    imageContainer: {
-        flex: 2,
-        justifyContent: "center",
-        alignContent: "center",
-        margin: 5,
     },
     textContainer: {
         flexDirection: "column",

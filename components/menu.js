@@ -1,6 +1,5 @@
 import React from "react";
-import { NativeRouter, Link } from "react-router-native";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet } from "react-native";
 import { Route } from "react-router";
 
 import CategoryPage from "./categoryPage";
@@ -19,6 +18,7 @@ export default class Menu extends React.Component {
                         path={route}
                         render={() => (
                             <CategoryPage
+                                search={this.props.search}
                                 menuItems={category.menuItems}
                                 subCategories={category.subCategories}
                             />

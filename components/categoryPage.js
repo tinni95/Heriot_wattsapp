@@ -6,6 +6,11 @@ import ItemCard from "./itemCard";
 export default class CategoryPage extends React.Component {
     renderMenuItems = menuItems => {
         return menuItems.edges
+            .filter(edge =>
+                edge.node.name
+                    .toLowerCase()
+                    .includes(this.props.search.toLowerCase())
+            )
             .map(edge => edge.node)
             .map(menuItem => {
                 return (
@@ -23,6 +28,11 @@ export default class CategoryPage extends React.Component {
             return null;
         }
         return this.props.subCategories.edges
+            .filter(edge =>
+                edge.node.name
+                    .toLowerCase()
+                    .includes(this.props.search.toLowerCase())
+            )
             .map(edge => edge.node)
             .map(subCategory => {
                 return (

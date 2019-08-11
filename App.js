@@ -14,7 +14,7 @@ import NavigationBar from "./components/navigationBar";
 import InfoBar from "./components/infoBar";
 import Menu from "./components/menu";
 
-export default class Appe extends React.Component {
+export default class App extends React.Component {
     state = {
         search: "",
     };
@@ -44,8 +44,9 @@ export default class Appe extends React.Component {
                             value={search}
                             placeholderTextColor={"white"}
                             color={"white"}
+                            inputStyle={{ color: "#fff" }}
                         />
-                        <Menu {...categories} />
+                        <Menu {...categories} search={this.state.search} />
                     </View>
                 </ScrollView>
             </NativeRouter>
