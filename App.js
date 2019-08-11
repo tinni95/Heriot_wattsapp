@@ -3,11 +3,7 @@ import { NativeRouter } from "react-router-native";
 import { SafeAreaView, ScrollView, View, StyleSheet, Text } from "react-native";
 import { SearchBar } from "react-native-elements";
 
-import {
-    main,
-    secondary,
-    searchBar,
-} from "./client-configs/stefanos/constants/colors";
+import { main, secondary } from "./client-configs/stefanos/constants/colors";
 
 import { categories } from "./dummy";
 import NavigationBar from "./components/navigationBar";
@@ -27,14 +23,14 @@ export default class App extends React.Component {
         const { search } = this.state;
         return (
             <NativeRouter>
-                <ScrollView>
-                    <InfoBar style={styles.infoBar} />
-                    <View style={styles.mainHeaders}>
-                        <View style={styles.logoContainer}>
-                            <Text style={styles.logo}>Logo</Text>
-                        </View>
-                        <NavigationBar {...categories} />
+                <InfoBar style={styles.infoBar} />
+                <View style={styles.mainHeaders}>
+                    <View style={styles.logoContainer}>
+                        <Text style={styles.logo}>Logo</Text>
                     </View>
+                    <NavigationBar {...categories} />
+                </View>
+                <ScrollView>
                     <View style={styles.mainConent}>
                         <SearchBar
                             containerStyle={styles.searchBarContainer}
