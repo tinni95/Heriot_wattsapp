@@ -1,39 +1,33 @@
 import React from "react";
-import { NativeRouter, Link } from "react-router-native";
-import {
-    TouchableHighlight,
-    StyleSheet,
-    Text,
-    View,
-    ScrollView,
-} from "react-native";
+import { StyleSheet, ScrollView, View } from "react-native";
+import NavigationElement from "./navigationElement";
+import { width } from "../constants/dimensions";
 
 export default class NavigationBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.updateState = this.updateState.bind(this);
+        this.state = {
+            active: 0,
+        };
+    }
+
+    updateState = active => {
+        this.setState({ active: active });
+    };
+
     renderNavBar = () => {
         return this.props.categories.edges
             .map(edge => edge.node)
             .map((category, index) => {
                 return (
-                    <View key={category.name}>
-                        <Link
-                            to={"/" + category.name}
-                            underlayColor="#f0f4f7"
-                            style={styles.navItem}
-                            component={TouchableHighlight}
-                        >
-                            {index == 0 ? (
-                                <View style={styles.selectedNav}>
-                                    <Text style={styles.navBarTextFirstItem}>
-                                        {category.name}
-                                    </Text>
-                                </View>
-                            ) : (
-                                <Text style={styles.navBarTextItem}>
-                                    {category.name}
-                                </Text>
-                            )}
-                        </Link>
-                    </View>
+                    <NavigationElement
+                        name={category.name}
+                        index={index}
+                        active={this.state.active}
+                        updateState={this.updateState}
+                        key={category.name}
+                    />
                 );
             });
     };
@@ -41,7 +35,9 @@ export default class NavigationBar extends React.Component {
     render() {
         return (
             <ScrollView horizontal={true} style={styles.container}>
+                <View style={styles.padding} />
                 {this.renderNavBar()}
+                <View style={styles.padding} />
             </ScrollView>
         );
     }
@@ -52,24 +48,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         height: 100,
     },
-    navItem: {
-        flex: 1,
-        alignItems: "center",
-        padding: 10,
-    },
-    navBarTextItem: {
-        color: "white",
-        fontSize: 22,
-        paddingLeft: 20,
-    },
-    navBarTextFirstItem: {
-        color: "white",
-        fontSize: 22,
-    },
-    selectedNav: {
-        borderBottomColor: "#E0A749",
-        borderBottomWidth: 2,
-        marginLeft: 120,
-        height: 40,
+    padding: {
+        width: width / 2 - 45,
     },
 });
