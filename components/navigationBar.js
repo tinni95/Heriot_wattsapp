@@ -14,6 +14,7 @@ export default class NavigationBar extends React.Component {
 
     updateState = active => {
         this.setState({ active: active });
+        this.scrollview.scrollTo({ x: 120 * active });
     };
 
     renderNavBar = () => {
@@ -34,7 +35,14 @@ export default class NavigationBar extends React.Component {
 
     render() {
         return (
-            <ScrollView horizontal={true} style={styles.container}>
+            <ScrollView
+                ref={scrollview => {
+                    this.scrollview = scrollview;
+                }}
+                scrollEventThrottle={16}
+                horizontal={true}
+                style={styles.container}
+            >
                 <View style={styles.padding} />
                 {this.renderNavBar()}
                 <View style={styles.padding} />
