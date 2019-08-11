@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     },
     navBarTextItem: {
         textAlign: "center",
-        color: "white",
+        color: "#D6D1D1",
         fontSize: 22,
     },
     selectedNav: {
@@ -53,5 +53,7 @@ const styles = StyleSheet.create({
     },
     navBarTextSelectedItem: {
         fontSize: 25,
+        paddingTop: -10,
+        color: "white",
     },
 });
