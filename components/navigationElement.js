@@ -3,10 +3,11 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Link } from "react-router-native";
 export default class NavigationElement extends React.Component {
     render() {
+        let route = this.props.index == 0 ? "/" : "/" + this.props.name;
         return (
             <View>
                 <Link
-                    to={"/" + this.props.name}
+                    to={route}
                     underlayColor="#f0f4f7"
                     style={styles.navItem}
                     component={TouchableOpacity}

@@ -7,13 +7,16 @@ import CategoryPage from "./categoryPage";
 
 export default class Menu extends React.Component {
     renderRoutes = () => {
+        let route;
         return this.props.categories.edges
             .map(edge => edge.node)
-            .map(category => {
+            .map((category, index) => {
+                route = index == 0 ? "/" : "/" + category.name;
                 return (
                     <Route
+                        exact
                         key={category.name}
-                        path={"/" + category.name}
+                        path={route}
                         render={() => (
                             <CategoryPage
                                 menuItems={category.menuItems}
