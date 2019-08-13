@@ -1,10 +1,15 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { Route } from "react-router";
-
+import PropTypes from "prop-types";
 import CategoryPage from "./categoryPage";
 
 export default class Menu extends React.Component {
+    static propTypes = {
+        categories: PropTypes.object.isRequired,
+        search: PropTypes.string.isRequired,
+    };
+
     renderRoutes = () => {
         let route;
         return this.props.categories.edges
@@ -32,16 +37,3 @@ export default class Menu extends React.Component {
         return this.renderRoutes();
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        marginTop: 25,
-        padding: 10,
-        height: 100,
-    },
-    navItem: {
-        flex: 1,
-        alignItems: "center",
-        padding: 10,
-    },
-});

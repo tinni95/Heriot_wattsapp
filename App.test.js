@@ -1,7 +1,30 @@
-import App from "./App";
+import App, { updateSearch } from "./App";
+import renderer from "react-test-renderer";
+import React from "react";
+import { SearchBar } from "react-native-elements";
 
 describe("app", () => {
-    it("is defined", () => {
-        expect(App).toBeDefined();
+    let rendered;
+    beforeEach(() => {
+        rendered = renderer.create(<App />);
+    });
+
+    it("renders", () => {
+        expect(rendered).toBeTruthy();
+    });
+
+    it("it matches Snapshot", () => {
+        const snapshottable = rendered.toJSON();
+        expect(snapshottable).toMatchSnapshot();
+    });
+
+    describe("searchBar", () => {
+        let searchBar;
+        beforeEach(() => {
+            searchBar = rendered.root.findByType(SearchBar);
+        });
+        it("gets rendered", () => {
+            expect(searchBar).toBeTruthy();
+        });
     });
 });

@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`itemCard matches snapshot 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "marginTop": 20,
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#F4F4F4",
+        "borderRadius": 10,
+        "flex": 1,
+        "flexDirection": "row",
+        "height": 100,
+        "margin": 8,
+        "width": 320,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 6,
+          "flexDirection": "column",
+          "margin": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 24,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        item
+      </Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 16,
+            "marginTop": 15,
+          }
+        }
+      >
+        £
+        20
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignContent": "center",
+          "backgroundColor": "#348653",
+          "borderBottomRightRadius": 10,
+          "borderTopRightRadius": 10,
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 20,
+            "textAlign": "center",
+          }
+        }
+      >
+        +
+      </Text>
+    </View>
+  </View>
+</View>
+`;

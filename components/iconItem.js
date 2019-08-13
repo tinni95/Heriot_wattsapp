@@ -1,8 +1,15 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { Icon } from "react-native-elements";
+import PropTypes from "prop-types";
 
 export default class IconItem extends React.Component {
+    static propTypes = {
+        color: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+    };
+
     render() {
         return (
             <View style={{ flexDirection: "row", marginRight: 20 }}>
