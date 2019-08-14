@@ -17,14 +17,4 @@ describe("app", () => {
         const snapshottable = rendered.toJSON();
         expect(snapshottable).toMatchSnapshot();
     });
-
-    describe("searchBar", () => {
-        let searchBar;
-        beforeEach(() => {
-            searchBar = rendered.root.findByType(SearchBar);
-        });
-        it("gets rendered", () => {
-            expect(searchBar).toBeTruthy();
-        });
-    });
 });

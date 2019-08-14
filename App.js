@@ -23,7 +23,12 @@ export default class App extends React.Component {
         const { search } = this.state;
         return (
             <NativeRouter>
-                <InfoBar style={styles.infoBar} />
+                <InfoBar
+                    number={"01314471135"}
+                    openHour={11}
+                    closingHour={11}
+                    style={styles.infoBar}
+                />
                 <View style={styles.mainHeaders}>
                     <View style={styles.logoContainer}>
                         <Text style={styles.logo}>Logo</Text>

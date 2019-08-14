@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`infoBar matches snapshot 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0A749",
+      "paddingBottom": 15,
+    }
+  }
+>
   <View
     style={
       Object {
@@ -85,7 +92,7 @@ exports[`infoBar matches snapshot 1`] = `
           }
         }
       >
-        01314471134
+        01314471135
       </Text>
     </View>
     <View

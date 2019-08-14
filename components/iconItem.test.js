@@ -17,4 +17,8 @@ describe("IconItem", () => {
     it("renders", () => {
         expect(rendered).toBeTruthy();
     });
+
+    it("matches snapshot", () => {
+        expect(rendered.toJSON()).toMatchSnapshot();
+    });
 });

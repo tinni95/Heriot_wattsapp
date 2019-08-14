@@ -11,6 +11,7 @@ props2 = {
     index: 1,
     name: "categoryName",
 };
+
 describe("navigationElement", () => {
     describe("if it's the first element (home)", () => {
         let rendered, link;

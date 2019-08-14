@@ -1,7 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Link } from "react-router-native";
+import PropTypes from "prop-types";
+
 export default class NavigationElement extends React.Component {
+    static propTypes = {
+        index: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+    };
     render() {
         let route = this.props.index == 0 ? "/" : "/" + this.props.name;
         return (

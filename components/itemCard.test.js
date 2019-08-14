@@ -1,6 +1,7 @@
 import React from "react";
 import ItemCard from "./itemCard";
 import renderer from "react-test-renderer";
+import { Text } from "react-native";
 
 props = {
     price: 20,
