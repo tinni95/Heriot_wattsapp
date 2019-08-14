@@ -2,8 +2,6 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import PropTypes from "prop-types";
 
-import { itemCard } from "../constants/colors";
-
 export default class ItemCard extends React.Component {
     static propTypes = {
         price: PropTypes.number.isRequired,
@@ -41,7 +39,7 @@ const styles = StyleSheet.create({
         height: 100,
         margin: 8,
         width: 320,
-        backgroundColor: itemCard.background,
+        backgroundColor: "#F4F4F4",
         borderRadius: 10,
     },
     textContainer: {
@@ -61,13 +59,13 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignContent: "center",
-        backgroundColor: itemCard.plusBtnBckgrnd,
+        backgroundColor: "#348653",
         borderBottomRightRadius: 10,
         borderTopRightRadius: 10,
     },
     plus: {
         textAlign: "center",
-        color: itemCard.plusBtnText,
+        color: "#FFFFFF",
         fontSize: 20,
     },
 });
