@@ -1,10 +1,9 @@
 import React from "react";
 import { NativeRouter } from "react-router-native";
-import { SafeAreaView, ScrollView, View, StyleSheet, Text } from "react-native";
+import { ScrollView, View, StyleSheet, Text } from "react-native";
 import { SearchBar } from "react-native-elements";
 
-import { main, secondary } from "./client-configs/stefanos/constants/colors";
-
+import { main, secondary, white, transparent } from "./constants/colors";
 import { categories } from "./dummy";
 import NavigationBar from "./components/navigationBar";
 import InfoBar from "./components/infoBar";
@@ -23,7 +22,12 @@ export default class App extends React.Component {
         const { search } = this.state;
         return (
             <NativeRouter>
-                <InfoBar style={styles.infoBar} />
+                <InfoBar
+                    number={"01314471135"}
+                    openHour={11}
+                    closingHour={11}
+                    style={styles.infoBar}
+                />
                 <View style={styles.mainHeaders}>
                     <View style={styles.logoContainer}>
                         <Text style={styles.logo}>Logo</Text>
@@ -38,9 +42,9 @@ export default class App extends React.Component {
                             placeholder={"Type something..."}
                             onChangeText={this.updateSearch}
                             value={search}
-                            placeholderTextColor={"white"}
-                            color={"white"}
-                            inputStyle={{ color: "#fff" }}
+                            placeholderTextColor={white}
+                            color={white}
+                            inputStyle={{ color: white }}
                         />
                         <Menu {...categories} search={this.state.search} />
                     </View>
@@ -51,11 +55,6 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    appContainer: {
-        flex: 1,
-        flexDirection: "column",
-        alignItems: "stretch",
-    },
     infoBar: {
         backgroundColor: secondary,
         paddingBottom: 15,
@@ -65,9 +64,9 @@ const styles = StyleSheet.create({
     },
     mainConent: {},
     searchBarContainer: {
-        backgroundColor: "white",
-        borderBottomColor: "transparent",
-        borderTopColor: "transparent",
+        backgroundColor: white,
+        borderBottomColor: transparent,
+        borderTopColor: transparent,
     },
     searchBar: {
         backgroundColor: secondary,
@@ -77,7 +76,7 @@ const styles = StyleSheet.create({
         margin: 20,
     },
     logo: {
-        color: "white",
+        color: white,
         fontSize: 50,
         textAlign: "center",
     },

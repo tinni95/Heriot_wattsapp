@@ -1,14 +1,17 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
-
-import { itemCard } from "../client-configs/stefanos/constants/colors";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import PropTypes from "prop-types";
+/* eslint  react-native/no-color-literals: 0 */
 export default class ItemCard extends React.Component {
+    static propTypes = {
+        price: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+    };
+
     render() {
         return (
-            <TouchableOpacity
-                style={{ flex: 1, alignItems: "center", marginTop: 20 }}
-            >
-                <View style={styles.ItemCard}>
+            <TouchableOpacity style={styles.itemCardContainer}>
+                <View style={styles.itemCard}>
                     <View style={styles.textContainer}>
                         <Text style={styles.itemName}>{this.props.name}</Text>
                         <Text style={styles.itemPrice}>
@@ -25,13 +28,18 @@ export default class ItemCard extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    ItemCard: {
+    itemCardContainer: {
+        flex: 1,
+        alignItems: "center",
+        marginTop: 20,
+    },
+    itemCard: {
         flex: 1,
         flexDirection: "row",
         height: 100,
         margin: 8,
         width: 320,
-        backgroundColor: itemCard.background,
+        backgroundColor: "#F4F4F4",
         borderRadius: 10,
     },
     textContainer: {
@@ -51,13 +59,13 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignContent: "center",
-        backgroundColor: itemCard.plusBtnBckgrnd,
+        backgroundColor: "#348653",
         borderBottomRightRadius: 10,
         borderTopRightRadius: 10,
     },
     plus: {
         textAlign: "center",
-        color: itemCard.plusBtnText,
+        color: "#FFFFFF",
         fontSize: 20,
     },
 });

@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 import ItemCard from "./itemCard";
 
@@ -37,13 +37,7 @@ export default class CategoryPage extends React.Component {
             .map(subCategory => {
                 return (
                     <View key={subCategory.name}>
-                        <Text
-                            style={{
-                                margin: 25,
-                                fontSize: 25,
-                                fontWeight: "bold",
-                            }}
-                        >
+                        <Text style={style.subCategoryHeader}>
                             {subCategory.name}
                         </Text>
                         {this.renderMenuItems(subCategory.menuItems)}
@@ -61,3 +55,11 @@ export default class CategoryPage extends React.Component {
         );
     }
 }
+
+const style = StyleSheet.create({
+    subCategoryHeader: {
+        margin: 25,
+        fontSize: 25,
+        fontWeight: "bold",
+    },
+});
