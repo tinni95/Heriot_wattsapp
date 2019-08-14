@@ -1,7 +1,9 @@
 import React from "react";
 import { StyleSheet, ScrollView, View } from "react-native";
-import NavigationElement from "./navigationElement";
+
 import { width } from "../constants/dimensions";
+
+import NavigationElement from "./navigationElement";
 
 export default class NavigationBar extends React.Component {
     constructor(props) {

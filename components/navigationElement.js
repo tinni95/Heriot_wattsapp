@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Link } from "react-router-native";
 import PropTypes from "prop-types";
 
+import { white, navigationBar } from "../constants/colors";
 export default class NavigationElement extends React.Component {
     static propTypes = {
         index: PropTypes.number.isRequired,
@@ -14,7 +15,7 @@ export default class NavigationElement extends React.Component {
             <View>
                 <Link
                     to={route}
-                    underlayColor="#f0f4f7"
+                    underlayColor={navigationBar.underlayColor}
                     style={styles.navItem}
                     component={TouchableOpacity}
                     onPress={() => this.props.updateState(this.props.index)}
@@ -49,11 +50,11 @@ const styles = StyleSheet.create({
     },
     navBarTextItem: {
         textAlign: "center",
-        color: "#D6D1D1",
+        color: navigationBar.navBarTextItem,
         fontSize: 22,
     },
     selectedNav: {
-        borderBottomColor: "#E0A749",
+        borderBottomColor: navigationBar.selectedNavBorderBottom,
         borderBottomWidth: 2,
         height: 40,
         alignItems: "center",
@@ -61,6 +62,6 @@ const styles = StyleSheet.create({
     navBarTextSelectedItem: {
         fontSize: 25,
         paddingTop: -10,
-        color: "white",
+        color: white,
     },
 });

@@ -1,16 +1,17 @@
 import React from "react";
-import Menu from "./menu";
 import renderer from "react-test-renderer";
 import { Route } from "react-router";
-import { categories } from "../dummy";
 import { NativeRouter } from "react-router-native";
 
-props = {
-    search: "",
-    categories: categories.categories,
-};
+import { categories } from "../dummy";
 
-describe("IconItem", () => {
+import Menu from "./menu";
+
+describe("menu", () => {
+    const props = {
+        search: "",
+        categories: categories.categories,
+    };
     let rendered, route;
     beforeEach(() => {
         rendered = renderer.create(

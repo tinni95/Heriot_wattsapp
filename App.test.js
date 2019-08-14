@@ -1,7 +1,7 @@
-import App, { updateSearch } from "./App";
 import renderer from "react-test-renderer";
 import React from "react";
-import { SearchBar } from "react-native-elements";
+
+import App from "./App";
 
 describe("app", () => {
     let rendered;

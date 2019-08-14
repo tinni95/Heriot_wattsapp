@@ -87,7 +87,7 @@ exports[`infoBar matches snapshot 1`] = `
       <Text
         style={
           Object {
-            "color": "white",
+            "color": "#fff",
             "fontSize": 14,
           }
         }
@@ -163,12 +163,12 @@ exports[`infoBar matches snapshot 1`] = `
       <Text
         style={
           Object {
-            "color": "white",
+            "color": "#fff",
             "fontSize": 14,
           }
         }
       >
-        open:11am-11pm
+        open: 11 am-11 pm
       </Text>
     </View>
   </View>

@@ -1,7 +1,8 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import IconItem from "./iconItem";
 import PropTypes from "prop-types";
+
+import IconItem from "./iconItem";
 
 export default class InfoBar extends React.Component {
     static propTypes = {
@@ -12,7 +13,6 @@ export default class InfoBar extends React.Component {
     };
 
     render() {
-        console.log(this.props.number);
         return (
             <View style={this.props.style}>
                 <View style={styles.bar}>
@@ -23,13 +23,7 @@ export default class InfoBar extends React.Component {
                     />
                     <IconItem
                         color={"white"}
-                        text={
-                            "open:" +
-                            this.props.openHour +
-                            "am-" +
-                            this.props.closingHour +
-                            "pm"
-                        }
+                        text={`open: ${this.props.openHour} am-${this.props.closingHour} pm`}
                         name={"ios-pin"}
                     />
                 </View>

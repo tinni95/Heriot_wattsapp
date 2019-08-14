@@ -88,7 +88,7 @@ Array [
         <Text
           style={
             Object {
-              "color": "white",
+              "color": "#fff",
               "fontSize": 14,
             }
           }
@@ -164,12 +164,12 @@ Array [
         <Text
           style={
             Object {
-              "color": "white",
+              "color": "#fff",
               "fontSize": 14,
             }
           }
         >
-          open:11am-11pm
+          open: 11 am-11 pm
         </Text>
       </View>
     </View>
@@ -191,7 +191,7 @@ Array [
       <Text
         style={
           Object {
-            "color": "white",
+            "color": "#fff",
             "fontSize": 50,
             "textAlign": "center",
           }
@@ -256,7 +256,7 @@ Array [
                       "textAlign": "center",
                     },
                     Object {
-                      "color": "white",
+                      "color": "#fff",
                       "fontSize": 25,
                       "paddingTop": -10,
                     },
@@ -382,10 +382,10 @@ Array [
         <View
           style={
             Object {
-              "backgroundColor": "white",
-              "borderBottomColor": "transparent",
+              "backgroundColor": "#fff",
+              "borderBottomColor": "rgba(255, 255, 255, 0.0)",
               "borderBottomWidth": 1,
-              "borderTopColor": "transparent",
+              "borderTopColor": "rgba(255, 255, 255, 0.0)",
               "borderTopWidth": 1,
               "padding": 8,
             }
@@ -482,13 +482,13 @@ Array [
               </View>
               <TextInput
                 allowFontScaling={true}
-                color="white"
+                color="#fff"
                 onBlur={[Function]}
                 onChangeText={[Function]}
                 onClear={[Function]}
                 onFocus={[Function]}
                 placeholder="Type something..."
-                placeholderTextColor="white"
+                placeholderTextColor="#fff"
                 platform="default"
                 rejectResponderTermination={true}
                 style={

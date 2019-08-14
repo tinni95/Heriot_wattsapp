@@ -69,7 +69,7 @@ exports[`IconItem matches snapshot 1`] = `
   <Text
     style={
       Object {
-        "color": "white",
+        "color": "#fff",
         "fontSize": 14,
       }
     }

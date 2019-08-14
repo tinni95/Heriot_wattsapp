@@ -1,6 +1,7 @@
-import CategoryPage from "./categoryPage";
 import renderer from "react-test-renderer";
 import React from "react";
+
+import CategoryPage from "./categoryPage";
 import ItemCard from "./itemCard";
 
 const propsOne = {
@@ -34,7 +35,7 @@ const propsTwo = {
                         edges: [
                             {
                                 node: {
-                                    name: "cacca",
+                                    name: "Ham and sausage",
                                     price: 20,
                                 },
                             },
@@ -63,7 +64,8 @@ const propsFive = {
 
 describe("categoryPage", () => {
     describe("without subCategories", () => {
-        let rendered, items;
+        let rendered;
+        let items;
 
         beforeEach(() => {
             rendered = renderer.create(<CategoryPage {...propsOne} />);
@@ -78,6 +80,7 @@ describe("categoryPage", () => {
 
     describe("with subCategories", () => {
         let rendered;
+        let items;
         beforeEach(() => {
             rendered = renderer.create(<CategoryPage {...propsTwo} />);
             items = rendered.root.findAllByType(ItemCard);
@@ -88,8 +91,9 @@ describe("categoryPage", () => {
         });
     });
 
-    describe("the search function", () => {
+    describe("the search function, with search matching one element", () => {
         let rendered;
+        let items;
         beforeEach(() => {
             rendered = renderer.create(<CategoryPage {...propsThree} />);
             items = rendered.root.findAllByType(ItemCard);
@@ -100,8 +104,9 @@ describe("categoryPage", () => {
         });
     });
 
-    describe("the search function", () => {
+    describe("the search function, with search matching two elements", () => {
         let rendered;
+        let items;
         beforeEach(() => {
             rendered = renderer.create(<CategoryPage {...propsFour} />);
             items = rendered.root.findAllByType(ItemCard);
@@ -112,8 +117,9 @@ describe("categoryPage", () => {
         });
     });
 
-    describe("the search function", () => {
+    describe("the search function, with search matching no elements", () => {
         let rendered;
+        let items;
         beforeEach(() => {
             rendered = renderer.create(<CategoryPage {...propsFive} />);
             items = rendered.root.findAllByType(ItemCard);

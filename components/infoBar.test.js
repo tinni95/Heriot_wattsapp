@@ -1,16 +1,18 @@
 import React from "react";
-import InfoBar from "./infoBar";
 import renderer from "react-test-renderer";
-const props = {
-    style: {
-        backgroundColor: "#E0A749",
-        paddingBottom: 15,
-    },
-    number: "01314471135",
-    openHour: 11,
-    closingHour: 11,
-};
+
+import InfoBar from "./infoBar";
+
 describe("infoBar", () => {
+    const props = {
+        style: {
+            backgroundColor: "#E0A749",
+            paddingBottom: 15,
+        },
+        number: "01314471135",
+        openHour: 11,
+        closingHour: 11,
+    };
     let rendered;
     beforeEach(() => {
         rendered = renderer.create(<InfoBar {...props} />);

@@ -1,14 +1,14 @@
 import React from "react";
-import ItemCard from "./itemCard";
 import renderer from "react-test-renderer";
-import { Text } from "react-native";
 
-props = {
-    price: 20,
-    name: "item",
-};
+import ItemCard from "./itemCard";
 
 describe("itemCard", () => {
+    const props = {
+        price: 20,
+        name: "item",
+    };
+
     let rendered;
     beforeEach(() => {
         rendered = renderer.create(<ItemCard {...props} />);

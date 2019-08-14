@@ -1,7 +1,7 @@
 import React from "react";
-import { StyleSheet } from "react-native";
 import { Route } from "react-router";
 import PropTypes from "prop-types";
+
 import CategoryPage from "./categoryPage";
 
 export default class Menu extends React.Component {

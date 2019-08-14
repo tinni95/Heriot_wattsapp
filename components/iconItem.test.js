@@ -1,14 +1,15 @@
 import React from "react";
-import IconItem from "./iconItem";
 import renderer from "react-test-renderer";
 
-props = {
-    color: "blue",
-    name: "ios-pin",
-    text: "hello",
-};
+import IconItem from "./iconItem";
 
 describe("IconItem", () => {
+    const props = {
+        color: "blue",
+        name: "ios-pin",
+        text: "hello",
+    };
+
     let rendered;
     beforeEach(() => {
         rendered = renderer.create(<IconItem {...props} />);

@@ -1,7 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import PropTypes from "prop-types";
-import { itemCard } from "../client-configs/stefanos/constants/colors";
+
+import { itemCard } from "../constants/colors";
+
 export default class ItemCard extends React.Component {
     static propTypes = {
         price: PropTypes.number.isRequired,
@@ -10,9 +12,7 @@ export default class ItemCard extends React.Component {
 
     render() {
         return (
-            <TouchableOpacity
-                style={{ flex: 1, alignItems: "center", marginTop: 20 }}
-            >
+            <TouchableOpacity style={styles.itemCardContainer}>
                 <View style={styles.itemCard}>
                     <View style={styles.textContainer}>
                         <Text style={styles.itemName}>{this.props.name}</Text>
@@ -30,6 +30,11 @@ export default class ItemCard extends React.Component {
 }
 
 const styles = StyleSheet.create({
+    itemCardContainer: {
+        flex: 1,
+        alignItems: "center",
+        marginTop: 20,
+    },
     itemCard: {
         flex: 1,
         flexDirection: "row",
