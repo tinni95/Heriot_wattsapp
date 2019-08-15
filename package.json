@@ -8,7 +8,8 @@
         "lint": "eslint ./",
         "lint:fix": "eslint --fix . && prettier ./**/*.js --write",
         "test": "jest",
-        "test:watch": "jest --watch"
+        "test:watch": "jest --watch",
+        "test:mutation": "stryker run"
     },
     "husky": {
         "hooks": {
@@ -34,6 +35,10 @@
         "react-router-native": "^5.0.1"
     },
     "devDependencies": {
+        "@stryker-mutator/core": "^2.0.2",
+        "@stryker-mutator/html-reporter": "^2.0.2",
+        "@stryker-mutator/javascript-mutator": "^2.0.2",
+        "@stryker-mutator/jest-runner": "^2.0.2",
         "babel-eslint": "^10.0.2",
         "babel-preset-expo": "^6.0.0",
         "eslint": "^6.1.0",

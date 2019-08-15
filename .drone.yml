@@ -1,0 +1,22 @@
+---
+kind: pipeline
+name: simple-tests
+steps:
+    - name: lint-and-test
+      image: node
+      commands:
+          - yarn install --dev
+          - yarn lint
+          - yarn test
+---
+kind: pipeline
+name: mutation-tests
+steps:
+    - name: mutation-test
+      image: node
+      commands:
+          - yarn install --dev
+          - yarn test:mutation
+trigger:
+    event:
+        - pull_request
