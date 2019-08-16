@@ -1,36 +1,29 @@
 {
-  "expo": {
-    "name": "Stefano's Fish and Chips",
-    "slug": "stefanos",
-    "privacy": "unlisted",
-    "sdkVersion": "34.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "primaryColor": "#301D5C",
-    "icon": "./client-configs/stefanos/assets/icon.png",
-    "splash": {
-      "image": "./client-configs/stefanos/assets/icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#301D5C"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 10000
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "extra": {
-
-        "header": "Not Random header text"
-      
+    "expo": {
+        "name": "Stefano's Fish and Chips",
+        "slug": "stefanos",
+        "privacy": "unlisted",
+        "sdkVersion": "34.0.0",
+        "platforms": ["ios", "android", "web"],
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "primaryColor": "#301D5C",
+        "icon": "./client-configs/stefanos/assets/icon.png",
+        "splash": {
+            "image": "./client-configs/stefanos/assets/icon.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#301D5C"
+        },
+        "updates": {
+            "fallbackToCacheTimeout": 10000
+        },
+        "assetBundlePatterns": ["**/*"],
+        "ios": {
+            "supportsTablet": true
+        },
+        "extra": {
+            "stylePath": "../client-configs/stefanos/styles",
+            "header": "Not Random header text"
+        }
     }
-  }
 }
