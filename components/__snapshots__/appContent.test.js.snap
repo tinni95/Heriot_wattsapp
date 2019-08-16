@@ -252,18 +252,18 @@ Array [
                   Array [
                     Object {
                       "color": "#D6D1D1",
-                      "fontSize": 22,
+                      "fontSize": 20,
                       "textAlign": "center",
                     },
                     Object {
                       "color": "#fff",
-                      "fontSize": 25,
+                      "fontSize": 23,
                       "paddingTop": -10,
                     },
                   ]
                 }
               >
-                Starters
+                STARTERS
               </Text>
             </View>
           </View>

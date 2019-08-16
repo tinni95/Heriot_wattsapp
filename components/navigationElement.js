@@ -28,12 +28,12 @@ export default class NavigationElement extends React.Component {
                                     styles.navBarTextSelectedItem,
                                 ]}
                             >
-                                {this.props.name}
+                                {this.props.name.toUpperCase()}
                             </Text>
                         </View>
                     ) : (
                         <Text style={styles.navBarTextItem}>
-                            {this.props.name}
+                            {this.props.name.toUpperCase()}
                         </Text>
                     )}
                 </Link>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     navBarTextItem: {
         textAlign: "center",
         color: navigationBar.navBarTextItem,
-        fontSize: 22,
+        fontSize: 20,
     },
     selectedNav: {
         borderBottomColor: navigationBar.selectedNavBorderBottom,
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     navBarTextSelectedItem: {
-        fontSize: 25,
+        fontSize: 23,
         paddingTop: -10,
         color: white,
     },
