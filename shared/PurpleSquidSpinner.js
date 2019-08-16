@@ -1,6 +1,7 @@
 import { ActivityIndicator, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
 import React from "react";
+
 import { main } from "../constants/colors";
 
 const PurpleSquidSpinner = ({ color }) => (

@@ -49,6 +49,8 @@ rules:
         - warn
     react-native/sort-styles:
         - off
+    react-native/no-color-literals:
+        - warn
     import/order:
         - error
         - newlines-between: always

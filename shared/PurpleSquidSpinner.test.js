@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "react-native-testing-library";
+
 import { main } from "../constants/colors";
 
 import PurpleSquidSpinner from "./PurpleSquidSpinner";

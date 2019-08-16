@@ -1,12 +1,12 @@
 import React from "react";
 import { render } from "react-native-testing-library";
 import { graphql, QueryRenderer } from "react-relay";
+import { View } from "react-native";
 
 import PurpleSquidSpinner from "../../shared/PurpleSquidSpinner";
 
 import environment from "./environment";
 import PurpleSquidRelayQueryRenderer from "./PurpleSquidRelayQueryRenderer";
-import PurpleSquidGraphQlErrorDisplay from "../../shared/PurpleSquidGraphQlErrorDisplay";
 
 describe("PurpleSquidRelayQueryRenderer", () => {
     it("is defined", () => {
@@ -70,17 +70,20 @@ describe("PurpleSquidRelayQueryRenderer", () => {
     });
 
     describe("queryRender", () => {
-        const props = {
+        const baseProps = {
             render: jest.fn(() => "component"),
         };
 
-        var queryRender;
-        beforeEach(() => {
-            const component = new PurpleSquidRelayQueryRenderer(props);
-            queryRender = component.queryRender;
-        });
+        describe("whilst the query is being processed and we want a spinner", () => {
+            const props = {
+                ...baseProps,
+            };
+            var queryRender;
+            beforeEach(() => {
+                const component = new PurpleSquidRelayQueryRenderer(props);
+                queryRender = component.queryRender;
+            });
 
-        describe("whilst the query is being processed", () => {
             const param = {
                 error: null,
                 retry: null,
@@ -95,7 +98,41 @@ describe("PurpleSquidRelayQueryRenderer", () => {
             });
         });
 
+        describe("whilst the query is being processed and we don't want a spinner", () => {
+            const props = {
+                ...baseProps,
+                hideSpinner: true,
+            };
+            var queryRender;
+            beforeEach(() => {
+                const component = new PurpleSquidRelayQueryRenderer(props);
+                queryRender = component.queryRender;
+            });
+
+            const param = {
+                error: null,
+                retry: null,
+                props: null,
+            };
+
+            it("it renders an empty View", () => {
+                const rendered = render(queryRender(param));
+
+                expect(rendered.toJSON()).toBeTruthy();
+                expect(rendered.getByType(View)).toBeTruthy();
+            });
+        });
+
         describe("when the query response is successful", () => {
+            const props = {
+                ...baseProps,
+            };
+            var queryRender;
+            beforeEach(() => {
+                const component = new PurpleSquidRelayQueryRenderer(props);
+                queryRender = component.queryRender;
+            });
+
             const param = {
                 error: null,
                 retry: jest.fn(),
@@ -104,7 +141,6 @@ describe("PurpleSquidRelayQueryRenderer", () => {
 
             it("invokes the supplied render method", () => {
                 const result = queryRender(param);
-                console.log(result);
                 expect(props.render).toHaveBeenCalledWith(param);
                 expect(result).toEqual(props.render());
             });

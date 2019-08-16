@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`app it matches Snapshot 1`] = `
+exports[`appContent it matches Snapshot 1`] = `
 Array [
   <View
     style={
@@ -263,105 +263,9 @@ Array [
                   ]
                 }
               >
-                Mains
+                Starters
               </Text>
             </View>
-          </View>
-        </View>
-        <View>
-          <View
-            accessible={true}
-            isTVSelectable={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "flex": 1,
-                "opacity": 1,
-                "padding": 20,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#D6D1D1",
-                  "fontSize": 22,
-                  "textAlign": "center",
-                }
-              }
-            >
-              Starters
-            </Text>
-          </View>
-        </View>
-        <View>
-          <View
-            accessible={true}
-            isTVSelectable={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "flex": 1,
-                "opacity": 1,
-                "padding": 20,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#D6D1D1",
-                  "fontSize": 22,
-                  "textAlign": "center",
-                }
-              }
-            >
-              Desserts
-            </Text>
-          </View>
-        </View>
-        <View>
-          <View
-            accessible={true}
-            isTVSelectable={true}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "flex": 1,
-                "opacity": 1,
-                "padding": 20,
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "color": "#D6D1D1",
-                  "fontSize": 22,
-                  "textAlign": "center",
-                }
-              }
-            >
-              Special
-            </Text>
           </View>
         </View>
         <View

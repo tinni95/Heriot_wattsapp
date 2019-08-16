@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import { Icon, Text } from "native-base";
+
 import { main } from "../constants/colors";
 
 const PurpleSquidGraphQlErrorDisplay = () => {

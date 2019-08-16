@@ -14,7 +14,7 @@ import { retryDelayInMillisecondsForAttemptNumber } from "./exponentialBackoff";
 const network = new RelayNetworkLayer([
     urlMiddleware({
         url: async () =>
-            `https://restaurants-graphql.k8s.public.aws.purplesquid.scot/`,
+            "https://restaurants-graphql.k8s.public.aws.purplesquid.scot/",
     }),
     authMiddleware(),
     loggerMiddleware(),
