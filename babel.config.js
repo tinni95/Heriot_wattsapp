@@ -1,7 +1,4 @@
-module.exports = function(api) {
-    api.cache(true);
-    return {
-        presets: ["babel-preset-expo"],
-        plugins: [["relay", { schema: "data/schema.json" }]],
-    };
+module.exports = {
+    presets: ["babel-preset-expo"],
+    plugins: ["relay", "@babel/plugin-transform-runtime"],
 };
