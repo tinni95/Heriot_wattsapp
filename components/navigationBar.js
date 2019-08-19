@@ -15,7 +15,7 @@ export default class NavigationBar extends React.Component {
     }
 
     updateState = active => {
-        this.setState({ active: active });
+        this.setState({ active });
         this.scrollview.scrollTo({ x: 120 * active });
     };
 

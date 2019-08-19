@@ -1,6 +1,7 @@
 import renderer from "react-test-renderer";
 import React from "react";
 
+import AppQueryRenderer from "./components/appQueryRenderer";
 import App from "./App";
 
 describe("app", () => {
@@ -13,8 +14,7 @@ describe("app", () => {
         expect(rendered).toBeTruthy();
     });
 
-    it("it matches Snapshot", () => {
-        const snapshottable = rendered.toJSON();
-        expect(snapshottable).toMatchSnapshot();
+    it("it renders AppQueryRenderer", () => {
+        expect(rendered.root.findByType(AppQueryRenderer)).toBeTruthy();
     });
 });
