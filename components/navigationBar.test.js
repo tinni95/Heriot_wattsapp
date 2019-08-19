@@ -31,5 +31,6 @@ describe("NavigationBar", () => {
 
     it("renders the correct navigation items", () => {
         expect(navigationItem.props.name).toEqual(name);
+        expect(typeof navigationItem.props.updateState).toBe("function");
     });
 });

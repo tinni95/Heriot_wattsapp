@@ -4,65 +4,27 @@ import React from "react";
 import CategoryPage from "./categoryPage";
 import ItemCard from "./itemCard";
 
-const propsOne = {
-    search: "",
-    menuItems: {
-        edges: [
-            {
-                node: {
-                    name: "mangia",
-                    price: 20,
-                },
-            },
-            {
-                node: {
-                    name: "mangiaa",
-                    price: 10,
-                },
-            },
-        ],
-    },
-};
-
-const propsTwo = {
-    ...propsOne,
-    subCategories: {
-        edges: [
-            {
-                node: {
-                    name: "Panini",
-                    menuItems: {
-                        edges: [
-                            {
-                                node: {
-                                    name: "Ham and sausage",
-                                    price: 20,
-                                },
-                            },
-                        ],
+describe("categoryPage", () => {
+    const propsOne = {
+        search: "",
+        menuItems: {
+            edges: [
+                {
+                    node: {
+                        name: "mangia",
+                        price: 20,
                     },
                 },
-            },
-        ],
-    },
-};
+                {
+                    node: {
+                        name: "mangiaa",
+                        price: 10,
+                    },
+                },
+            ],
+        },
+    };
 
-const propsThree = {
-    ...propsOne,
-    search: "mangiaa",
-};
-
-const propsFour = {
-    ...propsOne,
-    search: "mangia",
-};
-
-const propsFive = {
-    ...propsOne,
-    search: "dasofzjci0acj",
-};
-
-describe("categoryPage", () => {
     describe("without subCategories", () => {
         let rendered;
         let items;
@@ -79,6 +41,28 @@ describe("categoryPage", () => {
     });
 
     describe("with subCategories", () => {
+        const propsTwo = {
+            ...propsOne,
+            subCategories: {
+                edges: [
+                    {
+                        node: {
+                            name: "Panini",
+                            menuItems: {
+                                edges: [
+                                    {
+                                        node: {
+                                            name: "Ham and sausage",
+                                            price: 20,
+                                        },
+                                    },
+                                ],
+                            },
+                        },
+                    },
+                ],
+            },
+        };
         let rendered;
         let items;
         beforeEach(() => {
@@ -92,6 +76,10 @@ describe("categoryPage", () => {
     });
 
     describe("the search function, with search matching one element", () => {
+        const propsThree = {
+            ...propsOne,
+            search: "mangiaa",
+        };
         let rendered;
         let items;
         beforeEach(() => {
@@ -105,6 +93,10 @@ describe("categoryPage", () => {
     });
 
     describe("the search function, with search matching two elements", () => {
+        const propsFour = {
+            ...propsOne,
+            search: "mangia",
+        };
         let rendered;
         let items;
         beforeEach(() => {
@@ -118,6 +110,10 @@ describe("categoryPage", () => {
     });
 
     describe("the search function, with search matching no elements", () => {
+        const propsFive = {
+            ...propsOne,
+            search: "dasofzjci0acj",
+        };
         let rendered;
         let items;
         beforeEach(() => {

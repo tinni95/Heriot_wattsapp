@@ -1,11 +1,11 @@
 import renderer from "react-test-renderer";
 import React from "react";
 
-import AppContent from "./appContent";
 import { AppHeader } from "./appHeader";
-import { AppMainContent } from "./appMainContent";
+import InfoBar from "./infoBar";
+import NavigationBar from "./navigationBar";
 
-describe("appContent", () => {
+describe("appHeader", () => {
     const props = {
         categories: {
             edges: [
@@ -18,12 +18,12 @@ describe("appContent", () => {
         },
     };
     let rendered;
-    let appHeader;
-    let appMainContent;
+    let infoBar;
+    let navigationBar;
     beforeEach(() => {
-        rendered = renderer.create(<AppContent {...props} />);
-        appHeader = rendered.root.findByType(AppHeader);
-        appMainContent = rendered.root.findByType(AppMainContent);
+        rendered = renderer.create(<AppHeader {...props} />);
+        infoBar = rendered.root.findByType(InfoBar);
+        navigationBar = rendered.root.findByType(NavigationBar);
     });
 
     it("renders", () => {
@@ -31,7 +31,7 @@ describe("appContent", () => {
     });
 
     it("renders the right components", () => {
-        expect(appHeader).toBeTruthy();
-        expect(appMainContent).toBeTruthy();
+        expect(infoBar).toBeTruthy();
+        expect(navigationBar).toBeTruthy();
     });
 });
