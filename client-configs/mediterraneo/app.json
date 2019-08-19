@@ -1,36 +1,25 @@
 {
-  "expo": {
-    "name": "Mediterraneo Glasgow",
-    "slug": "mediterraneo",
-    "privacy": "unlisted",
-    "sdkVersion": "34.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "primaryColor": "#fc0",
-    "icon": "./client-configs/mediterraneo/assets/icon.png",
-    "splash": {
-      "image": "./client-configs/mediterraneo/assets/icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#fc0"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 10000
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "extra": {
-
-        "header": "Random header text"
-      
+    "expo": {
+        "name": "Mediterraneo Glasgow",
+        "slug": "mediterraneo",
+        "privacy": "unlisted",
+        "sdkVersion": "34.0.0",
+        "platforms": ["ios", "android", "web"],
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "primaryColor": "#fc0",
+        "icon": "./client-configs/mediterraneo/assets/icon.png",
+        "splash": {
+            "image": "./client-configs/mediterraneo/assets/icon.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#fc0"
+        },
+        "updates": {
+            "fallbackToCacheTimeout": 10000
+        },
+        "assetBundlePatterns": ["**/*"],
+        "ios": {
+            "supportsTablet": true
+        }
     }
-  }
 }

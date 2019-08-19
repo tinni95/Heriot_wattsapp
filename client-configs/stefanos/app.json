@@ -20,10 +20,6 @@
         "assetBundlePatterns": ["**/*"],
         "ios": {
             "supportsTablet": true
-        },
-        "extra": {
-            "stylePath": "../client-configs/stefanos/styles",
-            "header": "Not Random header text"
         }
     }
 }
