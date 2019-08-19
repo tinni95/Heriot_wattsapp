@@ -11,6 +11,7 @@ describe("appContent", () => {
             edges: [
                 {
                     node: {
+                        id: "1",
                         name: "Starters",
                     },
                 },

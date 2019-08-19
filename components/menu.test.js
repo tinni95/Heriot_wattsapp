@@ -3,14 +3,38 @@ import renderer from "react-test-renderer";
 import { Route } from "react-router";
 import { NativeRouter } from "react-router-native";
 
-import { categories } from "../dummy";
-
 import Menu from "./menu";
 
 describe("menu", () => {
+    const menuItems = {
+        edges: [
+            {
+                node: {
+                    name: "a",
+                },
+            },
+        ],
+    };
     const props = {
         search: "",
-        categories: categories.categories,
+        id: "1",
+        categories: {
+            edges: [
+                {
+                    node: {
+                        name: "name",
+                        subCategories: {
+                            edges: {
+                                node: {
+                                    menuItems,
+                                },
+                            },
+                        },
+                        menuItems,
+                    },
+                },
+            ],
+        },
     };
     let rendered, route;
     beforeEach(() => {
@@ -26,7 +50,7 @@ describe("menu", () => {
         expect(rendered).toBeTruthy();
     });
 
-    it("renders 4 route elements", () => {
-        expect(route).toHaveLength(4);
+    it("renders 1 route element", () => {
+        expect(route).toHaveLength(1);
     });
 });

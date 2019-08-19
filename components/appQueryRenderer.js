@@ -22,6 +22,7 @@ export default class AppQueryRenderer extends React.Component {
                                                 edges {
                                                     node {
                                                         name
+                                                        id
                                                     }
                                                 }
                                             }

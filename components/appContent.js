@@ -1,8 +1,6 @@
 import React from "react";
 import { NativeRouter } from "react-router-native";
 
-import { categories } from "../dummy";
-
 import { AppHeader } from "./appHeader";
 import { AppMainContent } from "./appMainContent";
 
@@ -18,9 +16,9 @@ export default class AppContent extends React.Component {
     render() {
         return (
             <NativeRouter>
-                <AppHeader categories={categories.categories} />
+                <AppHeader categories={this.props.categories} />
                 <AppMainContent
-                    categories={categories.categories}
+                    categories={this.props.categories}
                     updateSearch={this.updateSearch}
                     search={this.state.search}
                 />

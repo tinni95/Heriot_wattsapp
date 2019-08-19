@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash d7a707c484c42a16609240b61733cbfc
+ * @relayHash 3dec72d1560099c199acff3c2db30331
  */
 
 /* eslint-disable */
@@ -18,7 +18,8 @@ export type appQueryRendererQueryResponse = {|
           +categories: ?{|
             +edges: ?$ReadOnlyArray<?{|
               +node: ?{|
-                +name: ?string
+                +name: ?string,
+                +id: string,
               |}
             |}>
           |}
@@ -71,16 +72,50 @@ var v0 = [
 v1 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "name",
+  "name": "id",
   "args": null,
   "storageKey": null
 },
 v2 = {
-  "kind": "ScalarField",
+  "kind": "LinkedField",
   "alias": null,
-  "name": "id",
+  "name": "categories",
+  "storageKey": null,
   "args": null,
-  "storageKey": null
+  "concreteType": "CategoriesConnectionConnection",
+  "plural": false,
+  "selections": [
+    {
+      "kind": "LinkedField",
+      "alias": null,
+      "name": "edges",
+      "storageKey": null,
+      "args": null,
+      "concreteType": "CategoriesConnectionEdge",
+      "plural": true,
+      "selections": [
+        {
+          "kind": "LinkedField",
+          "alias": null,
+          "name": "node",
+          "storageKey": null,
+          "args": null,
+          "concreteType": "Category",
+          "plural": false,
+          "selections": [
+            {
+              "kind": "ScalarField",
+              "alias": null,
+              "name": "name",
+              "args": null,
+              "storageKey": null
+            },
+            (v1/*: any*/)
+          ]
+        }
+      ]
+    }
+  ]
 };
 return {
   "kind": "Request",
@@ -131,40 +166,7 @@ return {
                         "concreteType": "Restaurant",
                         "plural": false,
                         "selections": [
-                          {
-                            "kind": "LinkedField",
-                            "alias": null,
-                            "name": "categories",
-                            "storageKey": null,
-                            "args": null,
-                            "concreteType": "CategoriesConnectionConnection",
-                            "plural": false,
-                            "selections": [
-                              {
-                                "kind": "LinkedField",
-                                "alias": null,
-                                "name": "edges",
-                                "storageKey": null,
-                                "args": null,
-                                "concreteType": "CategoriesConnectionEdge",
-                                "plural": true,
-                                "selections": [
-                                  {
-                                    "kind": "LinkedField",
-                                    "alias": null,
-                                    "name": "node",
-                                    "storageKey": null,
-                                    "args": null,
-                                    "concreteType": "Category",
-                                    "plural": false,
-                                    "selections": [
-                                      (v1/*: any*/)
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
+                          (v2/*: any*/)
                         ]
                       }
                     ]
@@ -198,7 +200,7 @@ return {
             "args": null,
             "storageKey": null
           },
-          (v2/*: any*/),
+          (v1/*: any*/),
           {
             "kind": "InlineFragment",
             "type": "Client",
@@ -230,42 +232,8 @@ return {
                         "concreteType": "Restaurant",
                         "plural": false,
                         "selections": [
-                          {
-                            "kind": "LinkedField",
-                            "alias": null,
-                            "name": "categories",
-                            "storageKey": null,
-                            "args": null,
-                            "concreteType": "CategoriesConnectionConnection",
-                            "plural": false,
-                            "selections": [
-                              {
-                                "kind": "LinkedField",
-                                "alias": null,
-                                "name": "edges",
-                                "storageKey": null,
-                                "args": null,
-                                "concreteType": "CategoriesConnectionEdge",
-                                "plural": true,
-                                "selections": [
-                                  {
-                                    "kind": "LinkedField",
-                                    "alias": null,
-                                    "name": "node",
-                                    "storageKey": null,
-                                    "args": null,
-                                    "concreteType": "Category",
-                                    "plural": false,
-                                    "selections": [
-                                      (v1/*: any*/),
-                                      (v2/*: any*/)
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          (v2/*: any*/)
+                          (v2/*: any*/),
+                          (v1/*: any*/)
                         ]
                       }
                     ]
@@ -288,5 +256,5 @@ return {
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '25a52d376cab9158d8c5e197d3bbb750';
+(node/*: any*/).hash = 'd37c01bff8cd3e4709db9c929cde091a';
 module.exports = node;

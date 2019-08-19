@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router";
 import PropTypes from "prop-types";
 
-import CategoryPage from "./categoryPage";
+import CategoryQueryRenderer from "./categoryQueryRenderer";
 
 export default class Menu extends React.Component {
     static propTypes = {
@@ -22,10 +22,9 @@ export default class Menu extends React.Component {
                         key={category.name}
                         path={route}
                         render={() => (
-                            <CategoryPage
+                            <CategoryQueryRenderer
                                 search={this.props.search}
-                                menuItems={category.menuItems}
-                                subCategories={category.subCategories}
+                                id={category.id}
                             />
                         )}
                     />
