@@ -1,0 +1,395 @@
+"""
+A connection to a list of items.
+"""
+type CategoriesConnectionConnection {
+    """
+    Information to aid in pagination.
+    """
+    pageInfo: PageInfo!
+
+    """
+    A list of edges.
+    """
+    edges: [CategoriesConnectionEdge]
+}
+
+"""
+An edge in a connection.
+"""
+type CategoriesConnectionEdge {
+    """
+    The item at the end of the edge
+    """
+    node: Category
+
+    """
+    A cursor for use in pagination
+    """
+    cursor: String!
+}
+
+"""
+A Category
+"""
+type Category implements Node {
+    """
+    The ID of an object
+    """
+    id: ID!
+    name: String
+    createdAt: Date!
+    updatedAt: Date!
+    CategoryId: Int
+    RestaurantId: Int
+    subCategories(
+        after: String
+        first: Int
+        before: String
+        last: Int
+    ): SubCategoriesConnectionTypeConnection
+    menuItems(
+        after: String
+        first: Int
+        before: String
+        last: Int
+    ): MenuItemonnectionTypeConnection
+}
+
+"""
+A Client
+"""
+type Client implements Node {
+    """
+    The ID of an object
+    """
+    id: ID!
+    name: String
+    createdAt: Date!
+    updatedAt: Date!
+    restaurants(
+        after: String
+        first: Int
+        before: String
+        last: Int
+    ): RestaurantsConnectionConnection
+}
+
+"""
+A connection to a list of items.
+"""
+type ClientsConnectionConnection {
+    """
+    Information to aid in pagination.
+    """
+    pageInfo: PageInfo!
+
+    """
+    A list of edges.
+    """
+    edges: [ClientsConnectionEdge]
+}
+
+"""
+An edge in a connection.
+"""
+type ClientsConnectionEdge {
+    """
+    The item at the end of the edge
+    """
+    node: Client
+
+    """
+    A cursor for use in pagination
+    """
+    cursor: String!
+}
+
+"""
+A special custom Scalar type for Dates that converts to a ISO formatted string
+"""
+scalar Date
+
+"""
+A MenuItem
+"""
+type MenuItem implements Node {
+    """
+    The ID of an object
+    """
+    id: ID!
+    inStock: Boolean
+    open: Boolean
+    name: String
+    price_per_unit: String
+    createdAt: Date!
+    updatedAt: Date!
+    modifierGroups(
+        after: String
+        first: Int
+        before: String
+        last: Int
+    ): ModifierGroupsConnectionConnection
+}
+
+"""
+A connection to a list of items.
+"""
+type MenuItemonnectionTypeConnection {
+    """
+    Information to aid in pagination.
+    """
+    pageInfo: PageInfo!
+
+    """
+    A list of edges.
+    """
+    edges: [MenuItemonnectionTypeEdge]
+}
+
+"""
+An edge in a connection.
+"""
+type MenuItemonnectionTypeEdge {
+    """
+    The item at the end of the edge
+    """
+    node: MenuItem
+
+    """
+    A cursor for use in pagination
+    """
+    cursor: String!
+}
+
+"""
+An element that can be added to different menuItems, for Example Ketchup
+"""
+type Modifier implements Node {
+    """
+    The ID of an object
+    """
+    id: ID!
+    name: String
+    open: Boolean
+    price_per_unit: String
+    createdAt: Date!
+    updatedAt: Date!
+    ModifierGroupId: Int
+}
+
+"""
+A group of modifiers, which are things that can be added to menuItems, a group could be sauces
+"""
+type ModifierGroup implements Node {
+    """
+    The ID of an object
+    """
+    id: ID!
+    maximum: Int
+    minimum: Int
+    required: Boolean
+    name: String
+    createdAt: Date!
+    updatedAt: Date!
+    MenuItemId: Int
+    modifiers(
+        after: String
+        first: Int
+        before: String
+        last: Int
+    ): ModifiersConnectionConnection
+}
+
+"""
+A connection to a list of items.
+"""
+type ModifierGroupsConnectionConnection {
+    """
+    Information to aid in pagination.
+    """
+    pageInfo: PageInfo!
+
+    """
+    A list of edges.
+    """
+    edges: [ModifierGroupsConnectionEdge]
+}
+
+"""
+An edge in a connection.
+"""
+type ModifierGroupsConnectionEdge {
+    """
+    The item at the end of the edge
+    """
+    node: ModifierGroup
+
+    """
+    A cursor for use in pagination
+    """
+    cursor: String!
+}
+
+"""
+A connection to a list of items.
+"""
+type ModifiersConnectionConnection {
+    """
+    Information to aid in pagination.
+    """
+    pageInfo: PageInfo!
+
+    """
+    A list of edges.
+    """
+    edges: [ModifiersConnectionEdge]
+}
+
+"""
+An edge in a connection.
+"""
+type ModifiersConnectionEdge {
+    """
+    The item at the end of the edge
+    """
+    node: Modifier
+
+    """
+    A cursor for use in pagination
+    """
+    cursor: String!
+}
+
+"""
+An object with an ID
+"""
+interface Node {
+    """
+    The id of the object.
+    """
+    id: ID!
+}
+
+"""
+Information about pagination in a connection.
+"""
+type PageInfo {
+    """
+    When paginating forwards, are there more items?
+    """
+    hasNextPage: Boolean!
+
+    """
+    When paginating backwards, are there more items?
+    """
+    hasPreviousPage: Boolean!
+
+    """
+    When paginating backwards, the cursor to continue.
+    """
+    startCursor: String
+
+    """
+    When paginating forwards, the cursor to continue.
+    """
+    endCursor: String
+}
+
+type Query {
+    clients(
+        after: String
+        first: Int
+        before: String
+        last: Int
+    ): ClientsConnectionConnection
+
+    """
+    Fetches an object given its ID
+    """
+    node(
+        """
+        The ID of an object
+        """
+        id: ID!
+    ): Node
+}
+
+"""
+A Restaurant
+"""
+type Restaurant implements Node {
+    """
+    The ID of an object
+    """
+    id: ID!
+    name: String
+    createdAt: Date!
+    updatedAt: Date!
+    ClientId: Int
+    categories(
+        after: String
+        first: Int
+        before: String
+        last: Int
+    ): CategoriesConnectionConnection
+}
+
+"""
+A connection to a list of items.
+"""
+type RestaurantsConnectionConnection {
+    """
+    Information to aid in pagination.
+    """
+    pageInfo: PageInfo!
+
+    """
+    A list of edges.
+    """
+    edges: [RestaurantsConnectionEdge]
+}
+
+"""
+An edge in a connection.
+"""
+type RestaurantsConnectionEdge {
+    """
+    The item at the end of the edge
+    """
+    node: Restaurant
+
+    """
+    A cursor for use in pagination
+    """
+    cursor: String!
+}
+
+"""
+A connection to a list of items.
+"""
+type SubCategoriesConnectionTypeConnection {
+    """
+    Information to aid in pagination.
+    """
+    pageInfo: PageInfo!
+
+    """
+    A list of edges.
+    """
+    edges: [SubCategoriesConnectionTypeEdge]
+}
+
+"""
+An edge in a connection.
+"""
+type SubCategoriesConnectionTypeEdge {
+    """
+    The item at the end of the edge
+    """
+    node: Category
+
+    """
+    A cursor for use in pagination
+    """
+    cursor: String!
+}
