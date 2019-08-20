@@ -1,6 +1,7 @@
 import renderer from "react-test-renderer";
 import React from "react";
 import { Text } from "react-native";
+
 import CategoryPage from "./categoryPage";
 import ItemCard from "./itemCard";
 

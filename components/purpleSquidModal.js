@@ -9,7 +9,7 @@ export default class PurpleSquidModal extends Component {
 
     render() {
         return (
-            <View style={{ marginTop: 22 }}>
+            <View>
                 <Modal
                     animationType="slide"
                     transparent={false}
@@ -18,7 +18,7 @@ export default class PurpleSquidModal extends Component {
                         Alert.alert("Modal has been closed.");
                     }}
                 >
-                    <View style={{ marginTop: 22 }}>
+                    <View>
                         <View>
                             <Text>Hello World!</Text>
 

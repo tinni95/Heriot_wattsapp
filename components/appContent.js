@@ -3,7 +3,6 @@ import { NativeRouter } from "react-router-native";
 
 import { AppHeader } from "./appHeader";
 import { AppMainContent } from "./appMainContent";
-import PurpleSquidModal from "./purpleSquidModal";
 
 export default class AppContent extends React.Component {
     state = {

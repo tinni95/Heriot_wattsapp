@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import PropTypes from "prop-types";
+
 import PurpleSquidModal from "./purpleSquidModal";
 /* eslint  react-native/no-color-literals: 0 */
 export default class ItemCard extends React.Component {

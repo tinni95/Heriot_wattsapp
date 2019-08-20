@@ -2,16 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import ItemCard from "./itemCard";
-const menuItems = {
-    edges: [
-        {
-            node: {
-                name: "a",
-                price: 20,
-            },
-        },
-    ],
-};
+
 export default class CategoryPage extends React.Component {
     renderMenuItems = menuItems => {
         return menuItems.edges
@@ -58,7 +49,7 @@ export default class CategoryPage extends React.Component {
     render() {
         return (
             <View>
-                {this.renderMenuItems(menuItems)}
+                {this.renderMenuItems(this.props.menuItems)}
                 {this.renderSubCategories()}
             </View>
         );

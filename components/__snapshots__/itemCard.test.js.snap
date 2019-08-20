@@ -87,6 +87,52 @@ exports[`itemCard matches snapshot 1`] = `
         +
       </Text>
     </View>
+    <View
+      style={
+        Object {
+          "marginTop": 22,
+        }
+      }
+    >
+      <Modal
+        animationType="slide"
+        hardwareAccelerated={false}
+        onRequestClose={[Function]}
+        transparent={false}
+        visible={false}
+      >
+        <View
+          style={
+            Object {
+              "marginTop": 22,
+            }
+          }
+        >
+          <View>
+            <Text>
+              Hello World!
+            </Text>
+            <View
+              accessible={true}
+              isTVSelectable={true}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={null}
+            >
+              <Text
+                style={null}
+              >
+                Hide Modal
+              </Text>
+            </View>
+          </View>
+        </View>
+      </Modal>
+    </View>
   </View>
 </View>
 `;
