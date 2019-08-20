@@ -1,6 +1,6 @@
 import renderer from "react-test-renderer";
 import React from "react";
-
+import { Text } from "react-native";
 import CategoryPage from "./categoryPage";
 import ItemCard from "./itemCard";
 
@@ -65,13 +65,18 @@ describe("categoryPage", () => {
         };
         let rendered;
         let items;
+        let header;
         beforeEach(() => {
             rendered = renderer.create(<CategoryPage {...propsTwo} />);
             items = rendered.root.findAllByType(ItemCard);
+            header = rendered.root.findAllByType(Text);
         });
         it("renders three item cards", () => {
             expect(rendered).toBeTruthy();
             expect(items).toHaveLength(3);
+        });
+        it("renders subCategoryHeader", () => {
+            expect(header).toBeTruthy();
         });
     });
 

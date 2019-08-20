@@ -13,6 +13,7 @@ describe("appMainContent", () => {
             edges: [
                 {
                     node: {
+                        id: 1,
                         name: "Starters",
                         menuItems: {
                             edges: [
